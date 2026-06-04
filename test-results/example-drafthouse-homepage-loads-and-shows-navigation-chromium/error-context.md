@@ -1,0 +1,520 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: example.spec.ts >> drafthouse homepage loads and shows navigation
+- Location: tests/example.spec.ts:4:5
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: page.waitForTimeout: Test timeout of 30000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - main
+  - generic [ref=e4]:
+    - banner [ref=e5]:
+      - banner [ref=e6]:
+        - generic [ref=e7]:
+          - generic [ref=e8]:
+            - link [ref=e10] [cursor=pointer]:
+              - /url: /
+              - img [ref=e11]
+            - navigation [ref=e12]:
+              - list [ref=e13]:
+                - listitem [ref=e14]:
+                  - button [ref=e16] [cursor=pointer]:
+                    - generic [ref=e17]:
+                      - generic: CHOOSE YOUR ALAMO
+                      - img:
+                        - generic:
+                          - img
+                - listitem [ref=e18]:
+                  - button [ref=e20] [cursor=pointer]:
+                    - generic [ref=e21]:
+                      - generic: MOVIES
+                      - img:
+                        - generic:
+                          - img
+                - listitem [ref=e22]:
+                  - link [ref=e24] [cursor=pointer]:
+                    - /url: /food-and-drink
+                    - generic [ref=e25]:
+                      - generic: MENUS
+                - listitem [ref=e26]:
+                  - link [ref=e28] [cursor=pointer]:
+                    - /url: /victory/seasonpass
+                    - generic [ref=e29]:
+                      - generic: SEASON PASS
+                - listitem [ref=e30]:
+                  - link [ref=e32] [cursor=pointer]:
+                    - /url: /gift-cards
+                    - generic [ref=e33]:
+                      - generic: GIFT CARDS
+                - listitem [ref=e34]:
+                  - button [ref=e36] [cursor=pointer]:
+                    - generic [ref=e37]:
+                      - generic: MORE
+                      - img:
+                        - generic:
+                          - img
+          - list [ref=e39]:
+            - listitem [ref=e40]:
+              - button [ref=e42] [cursor=pointer]:
+                - generic [ref=e43]:
+                  - img:
+                    - generic:
+                      - img
+                  - generic: Tests
+                  - img:
+                    - generic:
+                      - img
+            - listitem [ref=e44]:
+              - button [ref=e46] [cursor=pointer]:
+                - generic [ref=e47]:
+                  - img:
+                    - generic:
+                      - img
+    - main [ref=e48]:
+      - generic [ref=e50]:
+        - heading [level=1] [ref=e51]: Movies & showtimes
+        - generic [ref=e55]:
+          - generic [ref=e56]:
+            - link [ref=e60] [cursor=pointer]:
+              - /url: https://drafthouse.com/victory/seasonpass/register
+              - img [ref=e63]
+            - link [ref=e67] [cursor=pointer]:
+              - /url: https://drafthouse.com/news/masters-of-the-universe-premium-presentation-menu-merch
+              - img [ref=e70]
+            - link [ref=e74] [cursor=pointer]:
+              - /url: https://giftshop.drafthouse.com/products/skeletor-t-shirt
+              - img [ref=e77]
+            - link [ref=e81] [cursor=pointer]:
+              - /url: https://drafthouse.com/news/family-summer-2026
+              - img [ref=e84]
+            - link [ref=e88] [cursor=pointer]:
+              - /url: /show/toy-story-5?from=hero
+              - img [ref=e91]
+          - button [ref=e92] [cursor=pointer]:
+            - img
+          - button [ref=e93] [cursor=pointer]:
+            - img
+        - generic [ref=e96]:
+          - heading [level=2] [ref=e98]:
+            - generic [ref=e99]:
+              - textbox [ref=e100]:
+                - /placeholder: Search Movies
+              - generic [ref=e101]:
+                - img [ref=e102]:
+                  - img [ref=e104]
+                - generic [ref=e107]: Submit search query
+          - generic [ref=e109]:
+            - heading [level=2] [ref=e110]:
+              - generic [ref=e111]: "Select from these options to filter the results:"
+            - generic [ref=e112]:
+              - generic [ref=e113]:
+                - generic [ref=e114]: WHAT
+                - list [ref=e117] [cursor=pointer]:
+                  - listitem [ref=e118]:
+                    - button [ref=e119]: Everything
+                  - listitem [ref=e120]:
+                    - button [ref=e121]: New Releases
+                  - listitem [ref=e122]:
+                    - button [ref=e123]: Only at the Alamo
+                  - listitem [ref=e124]:
+                    - button [ref=e125]: Advance Sales
+                  - listitem [ref=e126]:
+                    - button [ref=e127]: Family Friendly
+              - generic [ref=e128]:
+                - generic [ref=e129]: WHERE
+                - list [ref=e132] [cursor=pointer]:
+                  - listitem [ref=e133]:
+                    - button [ref=e134]: Anywhere
+                  - listitem [ref=e135]:
+                    - button [ref=e136]: Select Location
+          - generic [ref=e139]:
+            - generic [ref=e141] [cursor=pointer]:
+              - link [ref=e143]:
+                - /url: /show/scary-movie-2026
+                - img [ref=e144]
+              - generic [ref=e145]:
+                - link [ref=e146]:
+                  - /url: /show/scary-movie-2026
+                  - heading [level=2] [ref=e147]:
+                    - generic [ref=e148]: Scary Movie (2026)
+                - button [ref=e150]
+              - link [ref=e153]:
+                - /url: /show/scary-movie-2026
+                - generic [ref=e154]: The Core Four are back and no horror movie IP is safe
+            - generic [ref=e156] [cursor=pointer]:
+              - link [ref=e158]:
+                - /url: /show/backrooms
+                - img [ref=e159]
+              - generic [ref=e160]:
+                - link [ref=e161]:
+                  - /url: /show/backrooms
+                  - heading [level=2] [ref=e162]:
+                    - generic [ref=e163]: Backrooms
+                - button [ref=e165]
+              - link [ref=e168]:
+                - /url: /show/backrooms
+                - generic [ref=e169]: A strange doorway appears in the basement of a furniture showroom
+            - generic [ref=e171] [cursor=pointer]:
+              - link [ref=e173]:
+                - /url: /show/obsession-2026
+                - img [ref=e174]
+              - generic [ref=e175]:
+                - heading [level=3] [ref=e176]:
+                  - link [ref=e177]:
+                    - /url: /movies/drafthouse-recommends
+                - link [ref=e178]:
+                  - /url: /show/obsession-2026
+                  - heading [level=2] [ref=e179]:
+                    - generic [ref=e180]: Obsession (2026)
+                - button [ref=e182]
+              - link [ref=e185]:
+                - /url: /show/obsession-2026
+                - generic [ref=e186]: Be careful who you wish for
+            - generic [ref=e187] [cursor=pointer]:
+              - generic [ref=e188]: Jun 29
+              - generic [ref=e189]:
+                - link [ref=e191]:
+                  - /url: /event/hdr-by-barco-minions-and-monsters
+                  - img [ref=e192]
+                - generic [ref=e193]:
+                  - link [ref=e194]:
+                    - /url: /event/hdr-by-barco-minions-and-monsters
+                    - heading [level=2] [ref=e195]:
+                      - generic [ref=e196]: Minions & Monsters HDR by Barco
+                  - button [ref=e198]
+                - link [ref=e201]:
+                  - /url: /event/hdr-by-barco-minions-and-monsters
+                  - generic [ref=e202]: Deeper contrast, yellower yellows
+            - generic [ref=e204] [cursor=pointer]:
+              - link [ref=e206]:
+                - /url: /event/hdr-by-barco-masters-of-the-universe-2026
+                - img [ref=e207]
+              - generic [ref=e208]:
+                - link [ref=e209]:
+                  - /url: /event/hdr-by-barco-masters-of-the-universe-2026
+                  - heading [level=2] [ref=e210]:
+                    - generic [ref=e211]: Masters of the Universe (2026) HDR by Barco
+                - button [ref=e213]
+              - link [ref=e216]:
+                - /url: /event/hdr-by-barco-masters-of-the-universe-2026
+                - generic [ref=e217]: High Dynamic Range for highly defined muscles
+            - generic [ref=e219] [cursor=pointer]:
+              - link [ref=e221]:
+                - /url: /show/masters-of-the-universe-2026
+                - img [ref=e222]
+              - generic [ref=e223]:
+                - link [ref=e224]:
+                  - /url: /show/masters-of-the-universe-2026
+                  - heading [level=2] [ref=e225]:
+                    - generic [ref=e226]: Masters of the Universe (2026)
+                - button [ref=e228]
+              - link [ref=e231]:
+                - /url: /show/masters-of-the-universe-2026
+                - generic [ref=e232]: Legends aren't born. They're forged.
+            - generic [ref=e234] [cursor=pointer]:
+              - link [ref=e236]:
+                - /url: /show/power-ballad
+                - img [ref=e237]
+              - generic [ref=e238]:
+                - link [ref=e239]:
+                  - /url: /show/power-ballad
+                  - heading [level=2] [ref=e240]:
+                    - generic [ref=e241]: Power Ballad
+                - button [ref=e243]
+              - link [ref=e246]:
+                - /url: /show/power-ballad
+                - generic [ref=e247]: Every record has two sides
+            - generic [ref=e248] [cursor=pointer]:
+              - generic [ref=e249]: Jun 18
+              - generic [ref=e250]:
+                - link [ref=e252]:
+                  - /url: /event/hdr-by-barco-toy-story-5
+                  - img [ref=e253]
+                - generic [ref=e254]:
+                  - link [ref=e255]:
+                    - /url: /event/hdr-by-barco-toy-story-5
+                    - heading [level=2] [ref=e256]:
+                      - generic [ref=e257]: Toy Story 5 HDR by Barco
+                  - button [ref=e259]
+                - link [ref=e262]:
+                  - /url: /event/hdr-by-barco-toy-story-5
+                  - generic [ref=e263]: See the toys with a new coat of paint
+            - generic [ref=e265] [cursor=pointer]:
+              - link [ref=e267]:
+                - /url: /event/special-event-trainspotting-30th-anniversary
+                - img [ref=e268]
+              - generic [ref=e269]:
+                - link [ref=e270]:
+                  - /url: /event/special-event-trainspotting-30th-anniversary
+                  - heading [level=2] [ref=e271]:
+                    - generic [ref=e272]: Trainspotting 30th Anniversary
+                - button [ref=e274]
+              - link [ref=e277]:
+                - /url: /event/special-event-trainspotting-30th-anniversary
+                - generic [ref=e278]: Choose the big screen. Choose a brand-new 4K restoration.
+            - generic [ref=e279] [cursor=pointer]:
+              - generic [ref=e280]: Jun 18
+              - generic [ref=e281]:
+                - link [ref=e283]:
+                  - /url: /show/toy-story-5
+                  - img [ref=e284]
+                - generic [ref=e285]:
+                  - link [ref=e286]:
+                    - /url: /show/toy-story-5
+                    - heading [level=2] [ref=e287]:
+                      - generic [ref=e288]: Toy Story 5
+                  - button [ref=e290]
+                - link [ref=e293]:
+                  - /url: /show/toy-story-5
+                  - generic [ref=e294]: Something new has entered the playroom
+          - button [ref=e297] [cursor=pointer]
+        - complementary [ref=e299]:
+          - link [ref=e302] [cursor=pointer]:
+            - /url: https://giftshop.drafthouse.com/
+        - generic [ref=e306]:
+          - img [ref=e307]
+          - paragraph [ref=e308]: JOIN SEASON PASS, GET THE 2ND MONTH FREE
+          - button [ref=e310] [cursor=pointer]
+        - generic [ref=e313]:
+          - heading [level=2] [ref=e314]: Special Offers
+          - generic [ref=e316]:
+            - generic [ref=e318] [cursor=pointer]:
+              - img [ref=e320]
+              - generic [ref=e322]:
+                - heading [level=3] [ref=e323]: Feast like He-Man
+                - paragraph [ref=e324]: Exclusive MASTERS OF THE UNIVERSE menu available 6/2-6/22.
+            - generic [ref=e326] [cursor=pointer]:
+              - img [ref=e328]
+              - generic [ref=e330]:
+                - heading [level=3] [ref=e331]: Bring the family to Kids Camp
+                - paragraph [ref=e332]: Discounted tickets, full kids menu, and handpicked family movies all summer.
+            - generic [ref=e334] [cursor=pointer]:
+              - img [ref=e336]
+              - generic [ref=e338]:
+                - heading [level=3] [ref=e339]: Join Season Pass, get the 2nd month free
+                - paragraph [ref=e340]: See the summer’s biggest movies for less. Join today, get a 2nd month free.
+            - generic [ref=e342] [cursor=pointer]:
+              - img [ref=e344]
+              - generic [ref=e346]:
+                - heading [level=3] [ref=e347]: Skeletor t-shirt has arrived
+                - paragraph [ref=e348]: While supplies last, order the retro Skeletor tee on AlamoMart.com.
+          - button [ref=e350] [cursor=pointer]
+        - generic [ref=e353]:
+          - heading [level=2] [ref=e354]: Coming Soon
+          - generic [ref=e356]:
+            - generic [ref=e358] [cursor=pointer]:
+              - generic [ref=e359]: Jun 22
+              - link [ref=e360]:
+                - /url: /show/secret-society-141
+                - img [ref=e362]
+              - link [ref=e365]:
+                - /url: /show/secret-society-141
+                - heading [level=2] [ref=e366]
+                - generic: Hey, Weirdos!
+            - generic [ref=e368] [cursor=pointer]:
+              - generic [ref=e369]: Jun 29
+              - link [ref=e370]:
+                - /url: /show/mystery-machine-6-29-2026
+                - img [ref=e372]
+              - link [ref=e375]:
+                - /url: /show/mystery-machine-6-29-2026
+                - heading [level=2] [ref=e376]
+                - generic: Tempt cinematic fate with the latest new releases
+            - generic [ref=e378] [cursor=pointer]:
+              - generic [ref=e379]: Jul 13
+              - link [ref=e380]:
+                - /url: /show/secret-society-142
+                - img [ref=e382]
+              - link [ref=e385]:
+                - /url: /show/secret-society-142
+                - heading [level=2] [ref=e386]
+                - generic: Hey, Weirdos!
+            - generic [ref=e388] [cursor=pointer]:
+              - generic [ref=e389]: Jun 26
+              - link [ref=e390]:
+                - /url: /show/jackass-best-and-last
+                - img [ref=e392]
+              - link [ref=e395]:
+                - /url: /show/jackass-best-and-last
+                - heading [level=2] [ref=e396]
+                - generic: Johnny Knoxville and the gang return for one final fling at the big screen
+          - button [ref=e398] [cursor=pointer]
+        - complementary [ref=e401]:
+          - link [ref=e404] [cursor=pointer]:
+            - /url: https://drafthouse.com/offers
+        - generic [ref=e406]:
+          - heading [level=2] [ref=e407]:
+            - paragraph [ref=e409]: LATEST NEWS
+          - generic [ref=e412]:
+            - generic [ref=e414] [cursor=pointer]:
+              - img [ref=e417]
+              - generic [ref=e419]:
+                - heading [level=3] [ref=e420]: SUPERGIRL Soars Into Alamo Drafthouse in Premium Formats With Exclusive Merch
+                - paragraph [ref=e421]: See it early in HDR and The Big Show and order the limited-edition Krypto Cinema Charm.
+            - generic [ref=e423] [cursor=pointer]:
+              - img [ref=e426]
+              - generic [ref=e428]:
+                - heading [level=3] [ref=e429]: Summer at Alamo Drafthouse Belongs to Families
+                - paragraph [ref=e430]: Cancel your summer plans—we’ve got kids’ movies, discounted tickets, craft tables, squishy bananas, and just enough organized fun to keep adults entertained too.
+            - generic [ref=e432] [cursor=pointer]:
+              - img [ref=e435]
+              - generic [ref=e437]:
+                - heading [level=3] [ref=e438]: Bring Your Little Monsters to MINIONS & MONSTERS at Alamo Drafthouse
+                - paragraph [ref=e439]: Premium formats, early access, family parties, exclusive menu, merch, and ba-na-na.
+            - generic [ref=e441] [cursor=pointer]:
+              - img [ref=e444]
+              - generic [ref=e446]:
+                - heading [level=3] [ref=e447]: "You’ve Got a Friend at Alamo Drafthouse: Experience TOY STORY 5 With Us"
+                - paragraph [ref=e448]: Premium formats, limited-time kids’ menu, discounted tickets, exclusive collectibles, and a make-your-own Forky kit.
+            - generic [ref=e450] [cursor=pointer]:
+              - img [ref=e453]
+              - generic [ref=e455]:
+                - heading [level=3] [ref=e456]: Tohoscope Brings Biollante To The Big Screen With Exclusive Pin Set
+                - paragraph [ref=e457]: GODZILLA VS. BIOLLANTE stomps into Alamo this June with a limited-edition enamel pin set.
+            - generic [ref=e459] [cursor=pointer]:
+              - img [ref=e462]
+              - generic [ref=e464]:
+                - heading [level=3] [ref=e465]: When Stephen Colbert hosted Alamo Drafthouse's Lord of the Rings Cast Reunions
+                - paragraph [ref=e466]: As Stephen winds down the Late Show this week, we're sharing the full LOTR Cast Reunions online for the very first time.
+          - button [ref=e468] [cursor=pointer]
+        - generic [ref=e470]:
+          - generic [ref=e471]:
+            - generic [ref=e472]:
+              - heading [level=2] [ref=e473]: Alamo Drafthouse
+              - list [ref=e474]:
+                - listitem [ref=e475] [cursor=pointer]:
+                  - link [ref=e476]:
+                    - /url: ./about
+                - listitem [ref=e480] [cursor=pointer]:
+                  - link [ref=e481]:
+                    - /url: ./food-and-drink
+                - listitem [ref=e485] [cursor=pointer]:
+                  - link [ref=e486]:
+                    - /url: ./premium-presentation
+                - listitem [ref=e490] [cursor=pointer]:
+                  - link [ref=e491]:
+                    - /url: ./news
+                - listitem [ref=e495] [cursor=pointer]:
+                  - link [ref=e496]:
+                    - /url: https://careers.drafthouse.com
+                - listitem [ref=e500] [cursor=pointer]:
+                  - link [ref=e501]:
+                    - /url: ./victory
+                - listitem [ref=e505] [cursor=pointer]:
+                  - link [ref=e506]:
+                    - /url: https://drafthouse.com/private-events
+            - generic [ref=e510]:
+              - heading [level=2] [ref=e511]: Buy Stuff
+              - list [ref=e512]:
+                - listitem [ref=e513] [cursor=pointer]:
+                  - link [ref=e514]:
+                    - /url: ./gift-cards
+                    - generic [ref=e517]: Gift Cards
+                - listitem [ref=e518] [cursor=pointer]:
+                  - link [ref=e519]:
+                    - /url: https://giftshop.drafthouse.com
+                    - generic [ref=e522]: Shop AlamoMart
+            - generic [ref=e524]:
+              - heading [level=2] [ref=e525]: Contact Us
+              - list [ref=e526]:
+                - listitem [ref=e527] [cursor=pointer]:
+                  - link [ref=e528]:
+                    - /url: ./theaters
+                    - generic [ref=e531]: Contact Form
+                - listitem [ref=e532] [cursor=pointer]:
+                  - link [ref=e533]:
+                    - /url: ""
+                    - generic [ref=e536]: Facebook
+                - listitem [ref=e537] [cursor=pointer]:
+                  - link [ref=e538]:
+                    - /url: https://www.tiktok.com/@alamodrafthouse
+                    - generic [ref=e541]: TikTok
+                - listitem [ref=e542] [cursor=pointer]:
+                  - link [ref=e543]:
+                    - /url: https://twitter.com/
+                    - generic [ref=e546]: X
+              - generic [ref=e547]:
+                - link [ref=e548] [cursor=pointer]:
+                  - /url: ./mobileapp
+                  - text: Get The App
+                - paragraph [ref=e549]
+          - generic [ref=e553]:
+            - generic [ref=e554]:
+              - img [ref=e555]
+              - img [ref=e556]
+              - generic [ref=e557]: © Alamo Intermediate II Holdings, LLC
+            - generic [ref=e558]:
+              - list [ref=e559]:
+                - listitem [ref=e560] [cursor=pointer]:
+                  - link [ref=e561]:
+                    - /url: /terms-and-conditions
+                    - generic [ref=e564]: Terms & Conditions
+                - listitem [ref=e565] [cursor=pointer]:
+                  - link [ref=e566]:
+                    - /url: https://www.sonypictures.com/corp/privacy.html
+                    - generic [ref=e569]: Privacy Policy
+                - listitem [ref=e570] [cursor=pointer]:
+                  - link [ref=e571]:
+                    - /url: https://privacyportal.onetrust.com/webform/d19e506f-1a64-463d-94e4-914dd635817d/b9eb997c-9ede-451b-8fd4-29891782a928
+                    - generic [ref=e574]:
+                      - text: Your Privacy Choices
+                      - img [ref=e575]
+                - listitem [ref=e576] [cursor=pointer]:
+                  - button [ref=e577]:
+                    - generic [ref=e580]: Cookie Consent Tool
+              - list [ref=e581]:
+                - listitem [ref=e582] [cursor=pointer]:
+                  - link [ref=e583]:
+                    - /url: ""
+                    - img [ref=e588]
+                - listitem [ref=e590] [cursor=pointer]:
+                  - link [ref=e591]:
+                    - /url: https://twitter.com/
+                    - img [ref=e596]
+                - listitem [ref=e598] [cursor=pointer]:
+                  - link [ref=e599]:
+                    - /url: https://www.instagram.com/
+                    - img [ref=e604]
+                - listitem [ref=e606] [cursor=pointer]:
+                  - link [ref=e607]:
+                    - /url: https://www.youtube.com/user/AlamoDrafthouse
+                    - img [ref=e612]
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test';
+  2  | import { HomePage } from '../src/page-objects/HomePage';
+  3  | 
+  4  | test('drafthouse homepage loads and shows navigation', async ({ page }) => {
+  5  |   const home = new HomePage(page as any);
+  6  |   await home.goto('https://drafthouse.com');
+  7  |   await home.acceptCookies();
+  8  |   await page.waitForTimeout(10000);
+  9  |   await home.SignIn();
+> 10 |   await page.waitForTimeout(60000);
+     |              ^ Error: page.waitForTimeout: Test timeout of 30000ms exceeded.
+  11 |   //const hasLink = await home.hasFindATheaterLink();
+  12 |   //expect(hasLink).toBeTruthy();
+  13 | });
+  14 | 
+  15 | 
+```

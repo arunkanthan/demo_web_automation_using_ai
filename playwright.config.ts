@@ -1,4 +1,7 @@
+import { config as loadEnv } from 'dotenv';
 import { defineConfig, devices } from '@playwright/test';
+
+loadEnv();
 
 export default defineConfig({
   testDir: 'tests',

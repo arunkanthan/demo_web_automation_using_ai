@@ -29,6 +29,17 @@ npm run bs:android
 npm run bs:ios
 ```
 
+4. Use `.env` for test credentials
+
+Create a `.env` file in the repo root with the following values:
+
+```bash
+DRAFTHOUSE_EMAIL=test@example.com
+DRAFTHOUSE_PASSWORD=password
+```
+
+The test runner loads `.env` automatically and uses those values in `tests/example.spec.ts`.
+
 Notes
 - The BrowserStack script uses the Playwright websocket endpoint provided by BrowserStack. Ensure your BrowserStack plan supports Playwright mobile devices.
 - Page objects are under `src/page-objects` and tests under `tests`.
