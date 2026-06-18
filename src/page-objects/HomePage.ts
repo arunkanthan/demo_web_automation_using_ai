@@ -6,6 +6,10 @@ const signInSelector = 'ion-button[id="sign-in-sign-up-trigger-modal"]';
 const emailFieldSelector = '#ion-input-2';
 const passwordFieldSelector = '#ion-input-3';
 const submitButtonSelector = 'ion-button[type="submit"]';
+const userNameSelector = "//ion-button[@data-subnav-name='{}']";
+const profileMenuSelector = 'ion-icon';
+const marketDropdownSelector  = '//ion-button[@data-subnav-name="CHOOSE_YOUR_ALAMO"]';
+const marketOptionSelector = '//*[contains(text(), "{}")]';
 
 export class HomePage extends BasePage {
   constructor(page: Page) {
@@ -19,12 +23,33 @@ export class HomePage extends BasePage {
      
   }
 
-  async hasFindATheaterLink() {
-    const el = await this.page.$('text=/Find a Theater/i');
+  async hasAboutLink() {
+    const el = await this.page.$('text=/About/i');
     return !!el;
   }
 
-  async SignIn(
+   async hasProfileLink() {
+    const el = await this.page.locator(profileMenuSelector);
+    return !!el;
+  }
+
+  async userNameIsVisible(userName: string, timeout = 10000) {
+    const selector = userNameSelector.replace('{}', userName);
+    const profileMenu = this.page.locator(`xpath=${selector}`);
+    await profileMenu.waitFor({ state: 'visible', timeout });
+    return await profileMenu.isVisible();
+  }
+
+  async navigateToMarket(maketName: string, timeout = 10000) {   
+    const marketDropdown = this.page.locator(marketDropdownSelector);
+    await marketDropdown.waitFor({ state: 'visible', timeout: 10000 });
+    await marketDropdown.click();
+    const marketOption = this.page.locator(marketOptionSelector.replace('{}', maketName)).nth(1);
+    await marketOption.waitFor({ state: 'visible', timeout: 10000 });
+    await marketOption.click();
+  }
+
+  async SignInWithTestUser(
     email = process.env.DRAFTHOUSE_EMAIL ?? 'test@example.com',
     password = process.env.DRAFTHOUSE_PASSWORD ?? 'password',
     timeout = 10000
