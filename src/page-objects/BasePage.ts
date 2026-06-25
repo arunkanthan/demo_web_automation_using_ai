@@ -23,4 +23,21 @@ export class BasePage {
   async title() {
     return this.page.title();
   }
+
+  /**
+   * Accepts the OneTrust cookie banner if it appears. Safe to call when the
+   * banner isn't shown (e.g. already dismissed in this browser context).
+   */
+  async acceptCookiesIfPresent(timeout = 8000) {
+    const accept = this.page.locator('button#onetrust-accept-btn-handler');
+    await accept.waitFor({ state: 'visible', timeout }).catch(() => {});
+    if (await accept.isVisible().catch(() => false)) {
+      await accept.click();
+    }
+  }
+
+    async scrollDown(distance = 1500) {
+    await this.page.mouse.wheel(0, distance);
+    await this.page.waitForTimeout(300);
+  }
 }

@@ -10,6 +10,8 @@ const userNameSelector = "//ion-button[@data-subnav-name='{}']";
 const profileMenuSelector = 'ion-icon';
 const marketDropdownSelector  = '//ion-button[@data-subnav-name="CHOOSE_YOUR_ALAMO"]';
 const marketOptionSelector = '//*[contains(text(), "{}")]';
+const calendarToggleWrapperSelector = '.adc-listing_movies__calendar-toggle-wrapper';
+const calendarToggleSelector = '.toggle-inner';
 
 export class HomePage extends BasePage {
   constructor(page: Page) {
@@ -71,5 +73,16 @@ export class HomePage extends BasePage {
     await submitButton.click();
   }
 
-  
+  async toggleCalendar() {
+    const calendarToggle = this.page.locator(calendarToggleSelector).nth(0);
+    await calendarToggle.waitFor({ state: 'visible', timeout: 10000 });
+    await calendarToggle.click();
+  }
+
+  async isCalendarToggleOn(timeout = 10000) {
+    const calendarSwitch = this.page.getByRole('switch', { name: 'CALENDAR VIEW' });
+    await calendarSwitch.waitFor({ state: 'visible', timeout });
+    return (await calendarSwitch.getAttribute('aria-checked')) === 'true';
+  }
+
 }
