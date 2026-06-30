@@ -1,5 +1,7 @@
 import type { Page } from 'playwright';
 
+const acceptSelector = 'button#onetrust-accept-btn-handler';
+
 export class BasePage {
   protected page: Page;
   constructor(page: Page) {
@@ -29,7 +31,7 @@ export class BasePage {
    * banner isn't shown (e.g. already dismissed in this browser context).
    */
   async acceptCookiesIfPresent(timeout = 8000) {
-    const accept = this.page.locator('button#onetrust-accept-btn-handler');
+    const accept = this.page.locator(acceptSelector);
     await accept.waitFor({ state: 'visible', timeout }).catch(() => {});
     if (await accept.isVisible().catch(() => false)) {
       await accept.click();
